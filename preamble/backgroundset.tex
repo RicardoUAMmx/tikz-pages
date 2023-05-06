@@ -1,0 +1,25 @@
+% -----------------------------------------------------------------------------
+% Start File: preamble/backgroundset.tex
+% Author: Ricardo Hernández Osorio
+% Created: Friday, May-05-2023
+% Description: Predocument code inputed in main.
+% -----------------------------------------------------------------------------
+
+% Defined: setup {{{
+\backgroundsetup{%
+  scale=1,
+  angle=0,
+  opacity=1,
+  contents={%
+    \begin{tikzpicture}[remember picture,overlay]
+      \node (hy) at
+        ($(current page.north west)!0.25!(current page.north east)$) {};
+        \fill[BluCiti] (current page.south west) rectangle (hy);
+    \end{tikzpicture}
+  }
+}
+% End: Defined }}}
+
+% -----------------------------------------------------------------------------
+% End File: preamble/backgroundset.tex
+% -----------------------------------------------------------------------------

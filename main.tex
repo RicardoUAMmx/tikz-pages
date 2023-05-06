@@ -1,0 +1,72 @@
+% -----------------------------------------------------------------------------
+% Author: Ricardo Hernández Osorio.
+% Created: Friday, May-05-2023
+% Description: A letter document structure
+% -----------------------------------------------------------------------------
+\documentclass[10pt]{article}
+% Usepackage loaded {{{
+% Geometry, Fancyhdr {{{
+\usepackage[%
+  legalpaper,
+  includehead,
+  includefoot,
+  inner=.325\paperwidth,
+  outer=.075\paperwidth,
+  top=0.015\paperheight,
+  bottom=0.025\paperheight,
+  footskip=0.03\paperheight,
+  headheight=0.035\paperheight,
+  headsep=0.015\paperheight
+]{geometry}
+\usepackage{fancyhdr}
+% End: Geometry, Fancyhdr }}}
+% Inputenc, Fontenc, Babel, Lmodern {{{
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,mexico,es-noindentfirst]{babel}
+\usepackage{lmodern}
+% End: Inputenc, Fontenc, Babel, Lmodern }}}
+% Mathtools, Amssymb {{{
+\usepackage{mathtools}
+\usepackage{amssymb}
+% End: Mathtools, Amssymb }}}
+% Multicol, Array, Tabularx, Float, Lipsum {{{
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{lipsum}
+% End: Multicol, Array, Tabularx, Float }}}
+% Graphicx, Xcolor, Graphicspath {{{
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+% End: Graphicx, Xcolor, Graphicspath }}}
+% Tcolorbox, Tikz, Background {{{
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{background}
+% End: Tcolorbox, Tikz }}}
+% Tikz libraries {{{
+\usetikzlibrary{angles,intersections,calc,babel}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{matrix}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{fit}
+% End: Tikz libraries }}}
+% Tcb libraries {{{
+\tcbuselibrary{skins, xparse}
+\tcbuselibrary{raster}
+% End: Tcb libraries }}}
+% End: Usepackage loaded }}}
+\input{preamble/colors.tex}
+\input{preamble/fancy.tex}
+\input{preamble/backgroundset.tex}
+\begin{document}
+\lipsum[1-10]
+\footnote{\lipsum[1]}
+\lipsum[1-10]
+\end{document}
+
+
