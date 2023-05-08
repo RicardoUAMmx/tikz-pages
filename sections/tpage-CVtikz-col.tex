@@ -1,18 +1,17 @@
 % -----------------------------------------------------------------------------
-% Start File: preamble/backgroundset.tex
+% Start File: sections/tpage-CVtikz-col.tex
 % Author: Ricardo Hernández Osorio
-% Created: Friday, May-05-2023
-% Description: Predocument code inputed in main.
+% Created: Sunday, May-07-2023
+% Description: Resume title page
 % -----------------------------------------------------------------------------
 
-% Defined: setup {{{
-\newcommand\NBG{\backgroundsetup{contents={}}}
-\newcommand\YBG{\backgroundsetup{%
-scale=1,
-angle=0,
-opacity=1,
-contents={%
-\begin{tikzpicture}[remember picture,overlay]
+% Defined: Blue Column Section {{{
+\begin{tikzpicture}[
+  remember picture,overlay,
+  path image/.style={path picture={%
+    \node at (path picture bounding box.center) {
+      \includegraphics[width=0.4\textwidth]{#1}};
+  }}]
   % Defined: Reference Nodes {{{
   \node (righttopcol) at
     ($(current page.north west)!0.25!(current page.north east)$) {};
@@ -34,7 +33,7 @@ contents={%
     (left75col |- picture) {};
   % End: Reference Nodes }}}
   % Drawing: Blue Column {{{
-  \fill[BluCiti] (current page.south west) rectangle (righttopcol);
+  \fill[BluCiti] (current page.south west) rectangle (right75col);
   % End: Drawing }}}
   % Text: Blue Column Zone {{{
   \node (U1) at
@@ -86,6 +85,16 @@ contents={%
   \node[above=0.3cm of IT3,align=flush left,text width=0.3\textwidth] (Tin)
   {\color{white}\faIcon{paper-plane}\ \Large \textsc{Information}};
   % End: Text }}}
+  % Drawing: Top Shade Area {{{
+  \shade[top color=BluCiti] (leftpicture) rectangle (current page.north east);
+  % End: Drawing }}}
+  % Drawing: Circle Picture {{{
+  \draw[
+    path image=me1.jpg,BluCiti,line width=2pt,
+    circular drop shadow={opacity=1}
+  ]
+    ($(left75col)!0.5!(righttopcol)$) circle (0.18\textwidth);
+  % End: Drawing }}}
   % Drawing: University Lines {{{
   \draw[white]
     ([yshift=-0.2cm]U1.south west) -- ([yshift=-0.2cm]U1.south east);
@@ -103,10 +112,8 @@ contents={%
   -- ([yshift=-0.375\textwidth]IT3.south east);
   % End: University Lines }}}
 \end{tikzpicture}
-}
-}}
 % End: Defined }}}
 
 % -----------------------------------------------------------------------------
-% End File: preamble/backgroundset.tex
+% End File: sections/tpage-CVtikz-col.tex
 % -----------------------------------------------------------------------------

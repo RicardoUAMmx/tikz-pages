@@ -20,11 +20,12 @@
 ]{geometry}
 \usepackage{fancyhdr}
 % End: Geometry, Fancyhdr }}}
-% Inputenc, Fontenc, Babel, Lmodern {{{
+% Inputenc, Fontenc, Babel, Lmodern, Fontawesome5 {{{
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[spanish,mexico,es-noindentfirst]{babel}
 \usepackage{lmodern}
+\usepackage{fontawesome5}
 % End: Inputenc, Fontenc, Babel, Lmodern }}}
 % Mathtools, Amssymb {{{
 \usepackage{mathtools}
@@ -37,14 +38,16 @@
 \usepackage{float}
 \usepackage{lipsum}
 % End: Multicol, Array, Tabularx, Float }}}
-% Graphicx, Xcolor, Graphicspath {{{
+% Graphicx, Graphicspath, FancyQR {{{
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
+\usepackage{fancyqr}
 % End: Graphicx, Xcolor, Graphicspath }}}
-% Tcolorbox, Tikz, Background {{{
+% Tcolorbox, Tikz, Background, Xhfill {{{
 \usepackage{tcolorbox}
 \usepackage{tikz}
 \usepackage{background}
+\usepackage{xhfill}
 % End: Tcolorbox, Tikz }}}
 % Tikz libraries {{{
 \usetikzlibrary{angles,intersections,calc,babel}
@@ -53,7 +56,9 @@
 \usetikzlibrary{arrows.meta}
 \usetikzlibrary{matrix}
 \usetikzlibrary{backgrounds}
+\usetikzlibrary{shadows}
 \usetikzlibrary{fit}
+\usetikzlibrary{fadings}
 % End: Tikz libraries }}}
 % Tcb libraries {{{
 \tcbuselibrary{skins, xparse}
@@ -63,9 +68,20 @@
 \input{preamble/colors.tex}
 \input{preamble/fancy.tex}
 \input{preamble/backgroundset.tex}
+\fancyqrset{height=0.3\textwidth,level=H,padding}
 \begin{document}
-\lipsum[1-10]
-\footnote{\lipsum[1]}
+\begin{titlepage}
+\NBG %
+\input{sections/tpage-CVtikz-col.tex}
+\begin{center}
+  \Huge
+  \textcolor{BluCiti}{
+    \textsc{Ricardo Hernández Osorio}
+  }
+\end{center}
+\lipsum[1-7]
+\end{titlepage}
+\YBG
 \lipsum[1-10]
 \end{document}
 
