@@ -68,21 +68,23 @@
 \input{preamble/colors.tex}
 \input{preamble/fancy.tex}
 \input{preamble/backgroundset.tex}
-\fancyqrset{height=0.3\textwidth,level=H,padding}
+\fancyqrset{height=0.25\textwidth,level=H,padding}
 \begin{document}
 \begin{titlepage}
 \NBG %
-\input{sections/tpage-CVtikz-col.tex}
-\begin{center}
-  \Huge
-  \textcolor{BluCiti}{
-    \textsc{Ricardo Hernández Osorio}
-  }
-\end{center}
-\lipsum[1-7]
+\input{sections/tpage-colblue.tex}
+{\noindent\color{BckDrac}\Huge\textbf{Ricardo Hernández Osorio}}\\
+\tikz\draw[BckDrac,very thick] (0,0) -- (\textwidth,0);
+\color{BckDrac}
+{\centering
+  \textbf{Engineering, Mathematics, Control, Computer Sciences, Digital
+  Communications, Finance and Banking, Bussines and Sales}\\[1cm]
+}
+\noindent
+\lipsum[1]
 \end{titlepage}
-\YBG
-\lipsum[1-10]
+%\YBG
+%\lipsum[1-10]
 \end{document}
 
 

@@ -1,0 +1,114 @@
+% -----------------------------------------------------------------------------
+% Start File: sections/tpage-colblue.tex
+% Author: Ricardo Hernández Osorio
+% Created: Tuesday, May-09-2023
+% Description: Title page with blue column
+% -----------------------------------------------------------------------------
+
+% Defined: Blue Column Section {{{
+\begin{tikzpicture}[
+  remember picture,overlay,
+  path image/.style={path picture={%
+    \node at (path picture bounding box.center) {
+      \includegraphics[width=0.4\textwidth]{#1}};
+  }}]
+  % Drawing: Foreground color {{{
+  \node[
+    anchor=south west,
+    minimum width=\paperwidth,
+    minimum height=\paperheight,
+    fill=FgrDrac
+  ] (Foreground) at
+  (current page.south west) {};
+  % End: Foregorund color }}}
+  % Drawing: Blue Column {{{
+  \node[
+    anchor=south west,
+    minimum width=0.25\paperwidth,
+    minimum height=0.85\paperheight,
+    fill=BckDrac
+  ] (BlueCol) at
+  (current page.south west) {};
+  % End: Drawing }}}
+  \matrix[
+    anchor=north,
+    row sep=0.5cm,
+    nodes={text width=0.35\textwidth,text=white}
+  ] (M) at ([yshift=-0.5cm]BlueCol.north) {
+    % Definition: Contact node {{{
+    \node (D) {
+      \Large \faIcon{address-card}\ \textsc{Contact}\normalsize
+    };\\[-0.4cm]
+    % End: Contact node }}}
+    % Definition: Info node {{{
+    \node (E) {
+      \faIcon{phone-alt}\ \textbf{Phone:}\\
+      +52\ 7228442069\\
+      \faIcon{map-marker-alt}\ \textbf{Address:}\\
+      Toluca. México. México.\\
+      \faIcon{envelope-open-text}\ \textbf{E-Mail:}\\
+      \texttt{ricardo.hdz.o@outlook.com}
+    };\\
+    % End: Info node }}}
+    % Definition: Education node {{{
+    \node (A) {
+      \Large \faIcon{graduation-cap}\ \textsc{Education}\normalsize
+    };\\[-0.4cm]
+    % End: Education node }}}
+    % Definition: Institution 1 node {{{
+    \node (B) {
+      \textbf{Institution:}\\
+      \texttt{Universidad Autónoma Metropolitana}\\
+      \tikz\draw (0,0) -- (\textwidth,0);\\[0.2cm]
+      \includegraphics[width=\textwidth,decodearray={1 0 1 0 0.95 0 1 0}]{
+        variaciones-bitmap/variaciones-bitmap/variacion5.png}\\
+      \tikz\draw (0,0) -- (\textwidth,0);\\[0.2cm]
+      \textbf{Degree:}\\
+      \texttt{Computation and Telecommunications Engineering}\\
+      \tikz\draw (0,0) -- (\textwidth,0);\\
+      \textbf{Status:}\\
+      \texttt{Expected graduation date 2023}
+    };\\
+    % End: Institution 1 node }}}
+    % Definition: Institution 2 node {{{
+    \node (C) {
+      \textbf{Institution:}\\
+      \texttt{Universidad Autónoma del Estado de México}\\
+      \tikz\draw (0,0) -- (\textwidth,0);\\[0.2cm]
+      \includegraphics[width=\textwidth,decodearray={1 0 1 0 1 0 1 0}]{
+        UAEMex-PMV2.png}\\
+      \tikz\draw (0,0) -- (\textwidth,0);\\[0.2cm]
+      \textbf{Degree:}\\
+      \texttt{Mathematics}\\
+      \tikz\draw (0,0) -- (\textwidth,0);\\
+      \textbf{Status:}\\
+      \texttt{About 2 years of collage level studies}
+    };\\
+    % End: Institution 2 node }}}
+    % Definition: Further node {{{
+    \node (D) {
+      \Large \faIcon{paper-plane}\ \textsc{Further Info}\normalsize
+    };\\[-0.8cm]
+    % End: Further node }}}
+  % Definition: QR node {{{
+    \node (QRTelegram)
+    {\FancyQrLoad{default}
+      \fancyqr[%
+        image={\Huge\color{white}\faIcon{paper-plane}},
+        image padding=1,color=white]{https://t.me/LerTechBot}
+    };\\
+  % End: QR node }}}
+  };
+  \shade[top color=BckDrac,bottom color=FgrDrac]
+  (BlueCol.north west) rectangle (current page.north east);
+  \draw[
+    path image=me1.jpg,CyaDrac,line width=2pt,
+    circular drop shadow={opacity=1}
+  ] ($(BlueCol.north east)!0.5!(current page.north west)$)
+    circle (0.18\textwidth);
+\end{tikzpicture}
+% End: Defined }}}
+
+% -----------------------------------------------------------------------------
+% End File: sections/tpage-colblue.tex
+% -----------------------------------------------------------------------------
