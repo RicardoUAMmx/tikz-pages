@@ -81,7 +81,33 @@
   Communications, Finance and Banking, Bussines and Sales}\\[1cm]
 }
 \noindent
-\lipsum[1]
+\textsc{Summary}\ \xrfill[2pt]{1pt}[BckDrac]\\
+\lipsum[4]\\[0.75cm]
+\textsc{Professional Experience}\ \xrfill[2pt]{1pt}[BckDrac]\\
+\begin{tikzpicture}[]
+  \matrix[nodes={anchor=north west}] (M) {%
+    \node[text width=0.25\textwidth] (hsbc) {%
+      \includegraphics[width=\textwidth]{hsbc.png}\\
+      \tikz\draw[BckDrac] (0,0) -- (\textwidth,0);\\
+      \textbf{Role:}\\
+      \texttt{KYC Reviewer}\\
+      \textbf{Dates:}\\
+      \texttt{04/2012 - 09/2013}\\
+      \textbf{Place:}\\
+      \texttt{CdMx, Mexico}
+    }; &
+    \node[text width=0.7\textwidth,align=justify] (txt-hsbc)
+    {\lipsum[1]\\[0.4cm]}; \\
+  };
+\end{tikzpicture}
+\textsc{Skills workflow}\ \xrfill[2pt]{1pt}[BckDrac]\\
+\lipsum[66]\\
+\input{sections/tpage-skillswf.tex}
+\vspace{0.75cm}
+\noindent
+\textsc{Skills diagram}\ \xrfill[2pt]{1pt}[BckDrac]\\
+\lipsum[75]\\
+\input{sections/tpage-skillsdi.tex}
 \end{titlepage}
 %\YBG
 %\lipsum[1-10]

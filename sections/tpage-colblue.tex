@@ -37,7 +37,7 @@
   ] (M) at ([yshift=-0.5cm]BlueCol.north) {
     % Definition: Contact node {{{
     \node (D) {
-      \Large \faIcon{address-card}\ \textsc{Contact}\normalsize
+      \Large \textsc{Contact}\normalsize
     };\\[-0.4cm]
     % End: Contact node }}}
     % Definition: Info node {{{
@@ -52,7 +52,7 @@
     % End: Info node }}}
     % Definition: Education node {{{
     \node (A) {
-      \Large \faIcon{graduation-cap}\ \textsc{Education}\normalsize
+      \Large \textsc{Education}\normalsize
     };\\[-0.4cm]
     % End: Education node }}}
     % Definition: Institution 1 node {{{
@@ -60,7 +60,7 @@
       \textbf{Institution:}\\
       \texttt{Universidad Autónoma Metropolitana}\\
       \tikz\draw (0,0) -- (\textwidth,0);\\[0.2cm]
-      \includegraphics[width=\textwidth,decodearray={1 0 1 0 0.95 0 1 0}]{
+      \includegraphics[width=\textwidth,decodearray={1 0 1 0 1 0 1 0}]{
         variaciones-bitmap/variaciones-bitmap/variacion5.png}\\
       \tikz\draw (0,0) -- (\textwidth,0);\\[0.2cm]
       \textbf{Degree:}\\
@@ -87,7 +87,7 @@
     % End: Institution 2 node }}}
     % Definition: Further node {{{
     \node (D) {
-      \Large \faIcon{paper-plane}\ \textsc{Further Info}\normalsize
+      \Large \textsc{Further Info}\normalsize
     };\\[-0.8cm]
     % End: Further node }}}
   % Definition: QR node {{{
@@ -95,7 +95,9 @@
     {\FancyQrLoad{default}
       \fancyqr[%
         image={\Huge\color{white}\faIcon{paper-plane}},
-        image padding=1,color=white]{https://t.me/LerTechBot}
+        image padding=1,color=white]{https://t.me/LerTechBot}\\
+      \textbf{Link:}\\
+      \texttt{https://t.me/LerTechBot}
     };\\
   % End: QR node }}}
   };

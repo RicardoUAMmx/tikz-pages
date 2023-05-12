@@ -1,0 +1,49 @@
+% -----------------------------------------------------------------------------
+% Start File: sections/tpage-skillsdi.tex
+% Author: Ricardo Hernández Osorio
+% Created: Friday, May-12-2023
+% Description: Schematic skills workflow
+% -----------------------------------------------------------------------------
+
+\noindent
+\begin{tikzpicture}[]
+  \matrix[
+    nodes={fill=BckDrac,text=white,node font=\tt\tiny,minimum height=1.2cm},
+  column sep=0.01\textwidth,row sep=1.8mm] (M) {
+    % Defined: Skill boxes {{{
+    \node[text width=0.17\textwidth] (a) {%
+    Python:\\
+    Pandas, Numpy, Matplotlib, Scipy, Jinja}; &
+    \node[text width=0.17\textwidth] (b) {%
+    C/C++:\\
+    Makefile, Structures, Pointers, libs, gcc}; &
+    \node[text width=0.17\textwidth] (c) {%
+    LAMP stack:\\
+    Debian based OS, Sqlite/MariaDB, PHP/Python, Laravel Framework}; &
+    \node[text width=0.17\textwidth] (d) {%
+    Colaborative/Cloud:\\
+    SSH/SCP, Bash/Zsh, Git, Anaconda, DigitalOcean, AppWrite}; &
+    \node[text width=0.17\textwidth] (e) {%
+    Others:\\
+    Swift, R, \LaTeX, Arduino ATMEL, Microchip PIC16F/dsPIC30F, VHDL/VIVADO}; \\
+    \node[text width=0.17\textwidth] (p) {%
+    Spectral Analysis:\\
+    AM - FM Transceiver, Time series, Oscilloscopes}; &
+    \node[text width=0.17\textwidth] (q) {%
+    Circuit Analysis:\\
+    Proteus Simulation, basic KiCAD, Waveform generator, OpAmps}; &
+    \node[text width=0.17\textwidth] (r) {%
+    Modern Control:\\
+    basic SISO and MIMO systems, basic Simulink modeling}; &
+    \node[text width=0.17\textwidth] (s) {%
+    Fundamental Algorithms Analysis}; &
+    \node[text width=0.17\textwidth] (t) {%
+      Basic Networks
+    }; \\
+    % End: Skill boxes }}}
+  };
+\end{tikzpicture}
+
+% -----------------------------------------------------------------------------
+% End File: sections/tpage-skillsdi.tex
+% -----------------------------------------------------------------------------

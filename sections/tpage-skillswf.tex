@@ -1,0 +1,110 @@
+% -----------------------------------------------------------------------------
+% Start File: sections/tpage-skillswf.tex
+% Author: Ricardo Hernández Osorio
+% Created: Friday, May-12-2023
+% Description: Schematic skills workflow
+% -----------------------------------------------------------------------------
+
+\noindent
+\begin{tikzpicture}[]
+  \matrix[
+  nodes={fill=BckDrac,text=white,node font=\bfseries\tiny,minimum height=1cm},
+  column sep=0.054\textwidth] (M) {
+    % Defined: Skill boxes {{{
+    \node[text width=0.1\textwidth] (a) {Critical Thinking}; &
+    \node[text width=0.1\textwidth] (b) {Analytical Thinking}; &
+    \node[text width=0.1\textwidth] (c) {Teamwork}; &
+    \node[text width=0.1\textwidth] (d) {Problem Solving}; &
+    \node[text width=0.1\textwidth] (e) {IT Skills}; &
+    \node[text width=0.1\textwidth] (f) {Control}; \\
+    % End: Skill boxes }}}
+  };
+  % Defined: Explaining Skill Boxes {{{
+  \node[
+  anchor=north west,
+  text width=0.26\textwidth,
+  fill=CurDrac,
+  node font=\itshape\tiny,
+  text=white]
+  (ta) at ([yshift=-0.5cm]a.south west) {%
+  Results vs Problems:\\
+  \ - Create problems over problems\\
+  \ - Looking for and algorithm
+  };
+  \node[
+  anchor=south east,
+  text width=0.26\textwidth,
+  fill=CurDrac,
+  node font=\itshape\tiny,
+  text=white]
+  (tb) at ([yshift=0.5cm]b.north east) {%
+  Why?:\\
+  \ - Why some problems fails?\\
+  \ - How could it be solved?
+  };
+  \node[
+  anchor=north west,
+  text width=0.26\textwidth,
+  fill=CurDrac,
+  node font=\itshape\tiny,
+  text=white]
+  (tc) at ([yshift=-0.5cm]c.south west) {%
+  Active listening:\\
+  \ - Take opinions from your team\\
+  \ - Historical Results
+  };
+  \node[
+  anchor=south east,
+  text width=0.26\textwidth,
+  fill=CurDrac,
+  node font=\itshape\tiny,
+  text=white]
+  (td) at ([yshift=0.5cm]d.north east) {%
+  Make a plan:\\
+  \ - Path finding\\
+  \ - Plan to posible node fails
+  };
+  \node[
+  anchor=north west,
+  text width=0.26\textwidth,
+  fill=CurDrac,
+  node font=\itshape\tiny,
+  text=white]
+  (te) at ([yshift=-0.5cm]e.south west) {%
+  Translate and implement:\\
+  \ - Translate, document and implement over a program
+  };
+  \node[
+  anchor=south east,
+  text width=0.26\textwidth,
+  fill=CurDrac,
+  node font=\itshape\tiny,
+  text=white]
+  (tf) at ([yshift=0.5cm]f.north east) {%
+  Decision making:\\
+  \ - Sensing feedbacks
+  };
+  % End: Explaining Skill Boxes }}}
+  \draw[very thick,CurDrac] (a) -- (ta);
+  \draw[very thick,CurDrac] (b) -- (tb);
+  \draw[very thick,CurDrac] (c) -- (tc);
+  \draw[very thick,CurDrac] (d) -- (td);
+  \draw[very thick,CurDrac] (e) -- (te);
+  \draw[very thick,CurDrac] (f) -- (tf);
+  % Drawing: Arrow pointers {{{
+  \draw[-{Stealth},RedDrac,very thick] (a) -- (b);
+  \draw[-{Stealth},RedDrac,very thick] (b) -- (c);
+  \draw[-{Stealth},RedDrac,very thick] (c) -- (d);
+  \draw[-{Stealth},RedDrac,very thick] (d) -- (e);
+  \draw[-{Stealth},RedDrac,very thick] (e) -- (f);
+  \node[fill=RedDrac,inner sep=2pt,circle] (lwf) at ([xshift=-2mm]a.west) {};
+  \node[fill=RedDrac,inner sep=2pt,circle] (rwf) at ([xshift=2mm]f.east) {};
+  \draw[-{Stealth},RedDrac,very thick] (rwf) -- +(0,8mm) -| (lwf);
+  \draw[RedDrac,very thick] (lwf) -- (a);
+  \draw[RedDrac,very thick] (f) -- (rwf);
+  % End: Arrow Pointers }}}
+\end{tikzpicture}
+
+% -----------------------------------------------------------------------------
+% End File: sections/tpage-skillswf.tex
+% -----------------------------------------------------------------------------
