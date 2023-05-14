@@ -9,7 +9,7 @@
 \begin{tikzpicture}[]
   \matrix[
     nodes={fill=BckDrac,text=white,node font=\tt\tiny,minimum height=1.2cm},
-  column sep=0.01\textwidth,row sep=1.8mm] (M) {
+  column sep=0.01\textwidth,row sep=0.7cm] (M) {
     % Defined: Skill boxes {{{
     \node[text width=0.17\textwidth] (a) {%
     Python:\\
@@ -40,8 +40,32 @@
     \node[text width=0.17\textwidth] (t) {%
       Basic Networks
     }; \\
+    \node[text width=0.17\textwidth] (v) {%
+    Ms Office and Google Suite}; &
+    \node[text width=0.17\textwidth] (w) {%
+    Client and Employee relations}; &
+    \node[text width=0.17\textwidth] (x) {%
+    Bussiness and sales. Attention to detail. Customer service}; &
+    \node[text width=0.17\textwidth] (y) {%
+    Data visualization and Risk Analysis}; &
+    \node[text width=0.17\textwidth] (z) {%
+    Time management and Scheduling}; \\
     % End: Skill boxes }}}
   };
+  % Defined: Fit Boxes {{{
+  \node[draw=PurDrac,very thick,rounded corners,fit=(a) (b) (c) (d) (e)]
+  (box1) {};
+  \node[draw=PinDrac,very thick,rounded corners,fit=(p) (q) (r) (s) (t)]
+  (box2) {};
+  \node[draw=OraDrac,very thick,rounded corners,fit=(v) (w) (x) (y) (z)]
+  (box3) {};
+  % End: Fit Boxes }}}
+  \node[anchor=south west,node font=\tiny\tt,text=PurDrac] (tag1) at
+  (box1.north west) {IT Skills};
+  \node[anchor=south west,node font=\tiny\tt,text=PinDrac] (tag2) at
+  (box2.north west) {Technical/Theoretical Skills};
+  \node[anchor=south west,node font=\tiny\tt,text=OraDrac] (tag3) at
+  (box3.north west) {Administrative/Bussines Skills};
 \end{tikzpicture}
 
 % -----------------------------------------------------------------------------
