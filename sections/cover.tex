@@ -1,0 +1,40 @@
+% -----------------------------------------------------------------------------
+% Start File: sections/cover.tex
+% Author: Ricardo Hernández Osorio
+% Created: Monday, May-22-2023
+% Description: General University Cover
+% -----------------------------------------------------------------------------
+
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[BckDrac] (current page.south west) rectangle (current page.north east);
+  \node[text=PurDrac,align=center,text width=0.75\paperwidth] at 
+  (current page.center) {%
+  \Huge\textsc{Ricardo Hernández Osorio}\\[-0.8cm]
+  \tikz\draw (0,0) -- (\textwidth,0);\\
+  \normalsize Ingeniería en Computación y Telecomunicaciones\\[1cm]
+  \textbf{Temas:}\\
+  ¿Con qué nos quedamos después del paro?\\
+  Significado personal\\
+  ¿Somos mejores como comunidad?
+  };
+  \matrix[
+    anchor=south east,
+    row sep=0.5cm,
+    nodes={text width=0.2\paperwidth,text=PurDrac}
+  ] (M) at ([yshift=1cm]current page.south east) {
+    \node[anchor=east] (a) {%
+      \includegraphics[width=0.8\textwidth,decodearray={0.4 1 0.3 1 0.6 1}]{
+      variaciones-bitmap/variaciones-bitmap/variacion5.png}
+    }; & 
+    \node[anchor=west] (b) {%
+      \textbf{Unidad} Lerma\\
+      \textbf{UEA:} Caminar y Pensar\\
+      \textbf{Fecha:} 24 de Mayo. 2023\\
+      \textbf{Asesor:} Ruben G. Garza
+    }; \\
+  };
+\end{tikzpicture}
+
+% -----------------------------------------------------------------------------
+% End File: preamble/backgroundset.tex
+% -----------------------------------------------------------------------------

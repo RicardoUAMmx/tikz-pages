@@ -13,95 +13,46 @@ angle=0,
 opacity=1,
 contents={%
 \begin{tikzpicture}[remember picture,overlay]
-  % Defined: Reference Nodes {{{
-  \node (righttopcol) at
-    ($(current page.north west)!0.25!(current page.north east)$) {};
-  \node (rightbottomcol) at
-    ($(current page.south west)!0.25!(current page.south east)$) {};
-  \node (left75col) at
-    ($(current page.south west)!0.75!(current page.north west)$) {};
-  \node (right75col) at
-    (left75col -| righttopcol) {};
-  \node (center75col) at
-    ($(left75col)!0.5!(right75col)$) {};
-  \node (centerbottomcol) at
-    (current page.south west -| center75col) {};
-  \node (picture) at
-    ($(left75col)!0.5!(righttopcol)$) {};
-  \node (centertopcol) at
-    (picture -| current page.north east) {};
-  \node (leftpicture) at
-    (left75col |- picture) {};
-  % End: Reference Nodes }}}
+  % Drawing: Foreground color {{{
+  \node[
+    anchor=south west,
+    minimum width=\paperwidth,
+    minimum height=\paperheight,
+    fill=FgrDrac
+  ] (Foreground) at
+  (current page.south west) {};
+  % End: Foregorund color }}}
   % Drawing: Blue Column {{{
-  \fill[BluCiti] (current page.south west) rectangle (righttopcol);
+  \node[
+    anchor=south west,
+    minimum width=0.25\paperwidth,
+    minimum height=\paperheight,
+    fill=BckDrac
+  ] (Column) at
+  (current page.south west) {};
   % End: Drawing }}}
-  % Text: Blue Column Zone {{{
-  \node (U1) at
-  ($(center75col)!0.15!(centerbottomcol)$)
-  {\includegraphics[
-    width=0.3\textwidth,decodearray={1 0 1 0 1 0 1 0}]{
-        variaciones-bitmap/variaciones-bitmap/variacion5.png
-    }
+  % Text: Matrix Nodes {{{
+  \matrix[
+    anchor=north,
+    row sep=0.5cm,
+    nodes={text width=0.35\textwidth,text=PurDrac}
+  ] (M) at (Column.north) {
+    % Defined: Logo node {{{
+    \node[align=center,minimum height=5cm] (A) {
+      \includegraphics[width=0.8\textwidth,decodearray={0.4 1 0.3 1 0.6 1}]{
+      variaciones-bitmap/variaciones-bitmap/variacion5.png}
+    }; \\
+    % End: Defined }}}
+    % Defined: Info node {{{
+    \node[align=center] (B) {
+      \textbf{Unidad:} Lerma\\
+      \textbf{UEA:} Caminar y Pensar\\
+      \textbf{Fecha:} 24 de Mayo. 2023\\
+      \textbf{Asesor:} Ruben G. Garza
+    }; \\
+    % End: Defined }}}
   };
-  \node[below=0.5cm of U1,align=flush left,text width=0.3\textwidth] (T1)
-  {\textcolor{white}{
-    \textbf{Degree:}\\
-    \texttt{Computation and Telecommunications Engineering}\\\hrulefill\\
-    \textbf{Status:}\\
-    \texttt{Expected graduation date 2023}}
-  };
-  \node[above=0.5cm of U1,align=flush left,text width=0.3\textwidth] (IT1)
-  {\textcolor{white}{
-    \textbf{Institution:}}
-  };
-  \node[below=2cm of T1] (U2)
-  {\includegraphics[width=0.3\textwidth,decodearray={1 0 1 0 1 0 1 0}]{
-    UAEMex-PMV2.png}
-  };
-  \node[below=0.5cm of U2,align=flush left,text width=0.3\textwidth] (T2)
-  {\textcolor{white}{
-    \textbf{Degree:}\\
-    \texttt{Mathematics}\\\hrulefill\\
-    \textbf{Status:}\\
-    \texttt{About 2 years of collage level studies}}
-  };
-  \node[below=3cm of T2] (QRTelegram)
-  {\FancyQrLoad{default}
-    \fancyqr[%
-      image={\Huge\color{white}\faIcon{paper-plane}},
-      image padding=1,color=white]{https://t.me/LerTechBot}
-  };
-  \node[above=0.5cm of U2,align=flush left,text width=0.3\textwidth] (IT2)
-  {\textcolor{white}{
-    \textbf{Institution:}}
-  };
-  \node[above=0.3cm of IT1,align=flush left,text width=0.3\textwidth] (Tst)
-  {\color{white}\faIcon{graduation-cap}\ \Large \textsc{Education}};
-  \node[above=0.1cm of QRTelegram,align=flush left,text width=0.3\textwidth]
-  (IT3)
-  {\textcolor{white}{
-    \textbf{Telegram Bot FAQ:}}
-  };
-  \node[above=0.3cm of IT3,align=flush left,text width=0.3\textwidth] (Tin)
-  {\color{white}\faIcon{paper-plane}\ \Large \textsc{Information}};
   % End: Text }}}
-  % Drawing: University Lines {{{
-  \draw[white]
-    ([yshift=-0.2cm]U1.south west) -- ([yshift=-0.2cm]U1.south east);
-  \draw[white]
-    ([yshift=0.2cm]U1.north west) -- ([yshift=0.2cm]U1.north east);
-  \draw[white]
-    ([yshift=-0.2cm]U2.south west) -- ([yshift=-0.2cm]U2.south east);
-  \draw[white]
-    ([yshift=0.2cm]U2.north west) -- ([yshift=0.2cm]U2.north east);
-  \draw[white]
-    ([yshift=-0.3cm]IT3.south west)
-    -- ([yshift=-0.3cm]IT3.south east);
-  \draw[white]
-  ([yshift=-0.375\textwidth]IT3.south west)
-  -- ([yshift=-0.375\textwidth]IT3.south east);
-  % End: University Lines }}}
 \end{tikzpicture}
 }
 }}
